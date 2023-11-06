@@ -17,6 +17,5 @@
             "name": "PayRex Product Engineering Team"
         }
     ],
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
