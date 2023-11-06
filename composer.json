@@ -17,5 +17,10 @@
             "name": "PayRex Product Engineering Team"
         }
     ],
-    "prefer-stable": true
+    "prefer-stable": true,
+    "autoload": {
+      "psr-4": {
+        "Payrex\\": "src/"
+      }
+    }
 }
