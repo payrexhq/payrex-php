@@ -33,10 +33,19 @@ try {
 $newPaymentIntent = $client->paymentIntents->create([
     'amount' => 10000,
     'currency' => 'PHP',
-    'payment_methods' => ['card']
+    'payment_methods' => ['card', 'gcash']
     // other payload
 ]);
 
 // Retrieve a payment intent
 $paymentIntent = $client->paymentIntents->retrieve('insert payment intent id here.');
 echo $paymentIntent->id;
+
+// Refund a payment
+$refund = $client->refunds->create([
+    'amount' => 10000,
+    'currency' => 'PHP',
+    'payment_id' => 'replace with payment id to be refunded',
+    "reason" => 'fraudulent',
+    // other optional payload.
+]);

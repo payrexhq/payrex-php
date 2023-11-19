@@ -2,9 +2,11 @@
 
 namespace Payrex\Services;
 
-class ServiceFactory {
+class ServiceFactory
+{
     private $classes = [
         'paymentIntents' => \Payrex\Services\PaymentIntentService::class,
+        'refunds'        => \Payrex\Services\RefundService::class,
     ];
 
     public function get($name)
