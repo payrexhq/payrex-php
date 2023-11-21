@@ -7,6 +7,8 @@ class ServiceFactory
     private $classes = [
         'paymentIntents' => \Payrex\Services\PaymentIntentService::class,
         'refunds'        => \Payrex\Services\RefundService::class,
+        'transfers'      => \Payrex\Services\TransferService::class,
+        'merchants'      => \Payrex\Services\MerchantService::class,
     ];
 
     public function get($name)

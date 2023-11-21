@@ -10,6 +10,8 @@ require $srcDir . '/Error.php';
 require $srcDir . '/Services/BaseService.php';
 require $srcDir . '/Services/PaymentIntentService.php';
 require $srcDir . '/Services/RefundService.php';
+require $srcDir . '/Services/TransferService.php';
+require $srcDir . '/Services/MerchantService.php';
 require $srcDir . '/Services/ServiceFactory.php';
 
 // Entities
@@ -18,6 +20,8 @@ require $srcDir . '/Entities/PaymentIntent.php';
 require $srcDir . '/Entities/Refund.php';
 require $srcDir . '/Entities/Billing.php';
 require $srcDir . '/Entities/BillingAddress.php';
+require $srcDir . '/Entities/Transfer.php';
+require $srcDir . '/Entities/Merchant.php';
 require $srcDir . '/Entities/Listing.php';
 
 //HTTPClient
