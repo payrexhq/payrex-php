@@ -63,3 +63,10 @@ $transfer = $client->transfers->create([
     'destination' => 'insert connect merchant id that will receive the transfer'
     // other optional payload.
 ]);
+
+// Create a webhook
+$webhook = $client->webhooks->create([
+    'url' => 'https://google3.com',
+    'description' => 'test description',
+    'events' => ['payment_intent.succeeded'],
+]);
