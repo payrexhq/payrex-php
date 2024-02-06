@@ -27,6 +27,10 @@ require $srcDir . '/Entities/Listing.php';
 require $srcDir . '/Entities/Webhook.php';
 require $srcDir . '/Entities/Deleted.php';
 
+require $srcDir . '/Event.php';
+require $srcDir . '/EventData.php';
+require $srcDir . '/Webhook.php';
+
 //HTTPClient
 require $srcDir . '/HttpClient.php';
 
@@ -38,3 +42,4 @@ require $srcDir . '/Exceptions/InvalidServiceException.php';
 require $srcDir . '/Exceptions/RouteNotFoundException.php';
 require $srcDir . '/Exceptions/ResourceNotFoundException.php';
 require $srcDir . '/Exceptions/UnexpectedValueException.php';
+require $srcDir . '/Exceptions/SignatureVerificationException.php';
