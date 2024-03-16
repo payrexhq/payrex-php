@@ -10,6 +10,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
     public $currency;
     public $description;
     public $livemode;
+    public $latest_payment;
     public $last_payment_error;
     public $status;
     public $payment_methods;
@@ -28,6 +29,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
         $this->currency = $data['currency'];
         $this->description = $data['description'];
         $this->livemode = $data['livemode'];
+        $this->latest_payment = $data['latest_payment'];
         $this->last_payment_error = array_key_exists("last_payment_error", $data) ? $data['last_payment_error']: null;
         $this->status = $data['status'];
         $this->payment_methods = $data['payment_methods'];
