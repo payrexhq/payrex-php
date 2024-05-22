@@ -2,6 +2,7 @@
 
 $srcDir = dirname(__FILE__) . '/src';
 
+require $srcDir . '/Payrex.php';
 require $srcDir . '/PayrexClient.php';
 require $srcDir . '/ApiResource.php';
 require $srcDir . '/Error.php';

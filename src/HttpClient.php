@@ -1,7 +1,6 @@
 <?php
 
 namespace Payrex;
-
 class HttpClient
 {
     private $apiKey;
@@ -34,6 +33,7 @@ class HttpClient
                 'Authorization: Basic '. base64_encode($this->apiKey . ':'),
             ]
         );
+        $opts[\CURLOPT_CAINFO] = \Payrex\Payrex::getCACertificateBundlePath();
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         
@@ -43,6 +43,10 @@ class HttpClient
             }
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $opts['method']);
             curl_setopt($ch, CURLOPT_POST, 1);
+        }
+
+        if (!\Payrex\Payrex::getVerifySslCerts()) {
+            $opts[\CURLOPT_SSL_VERIFYPEER] = false;
         }
 
         $body = curl_exec($ch);
