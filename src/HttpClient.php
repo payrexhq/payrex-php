@@ -53,15 +53,21 @@ class HttpClient
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $url = curl_getinfo($ch,  CURLINFO_EFFECTIVE_URL);
 
-        if ($code < 200 || $code >= 400) {
-            $this->handleErrorResponse($body, $code, $url);
+        if ($body === false) {
+            curl_close($ch);
+
+            throw new \Exception(curl_error($ch));
+        } else {
+            if ($code < 200 || $code >= 400) {
+                $this->handleErrorResponse($body, $code, $url);
+            }
+
+            $jsonBody = json_decode($body, true);
+
+            curl_close($ch);
+
+            return new \Payrex\ApiResource($jsonBody);
         }
-
-        curl_close($ch);
-        
-        $jsonBody = json_decode($body, true);
-
-        return new \Payrex\ApiResource($jsonBody);
     }
 
     private function handleErrorResponse($body, $code, $url)
