@@ -9,6 +9,7 @@ require $srcDir . '/Error.php';
 
 // Services
 require $srcDir . '/Services/BaseService.php';
+require $srcDir . '/Services/CheckoutSessionService.php';
 require $srcDir . '/Services/PaymentIntentService.php';
 require $srcDir . '/Services/RefundService.php';
 require $srcDir . '/Services/WebhookService.php';
@@ -19,6 +20,7 @@ require $srcDir . '/Services/ServiceFactory.php';
 // Entities
 require $srcDir . '/Entities/BaseEntity.php';
 require $srcDir . '/Entities/PaymentIntent.php';
+require $srcDir . '/Entities/CheckoutSession.php';
 require $srcDir . '/Entities/Refund.php';
 require $srcDir . '/Entities/Billing.php';
 require $srcDir . '/Entities/BillingAddress.php';

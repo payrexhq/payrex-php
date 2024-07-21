@@ -43,7 +43,36 @@ class HttpClient
         
         if (in_array($opts['method'], ['DELETE', 'POST', 'PUT'])) {
             if (isset($opts['params'])) {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($opts['params'])));
+                // Handle payload with a mixture of single and multidimensional array.
+                $single_array = [];
+                $multidimensional_array = [];
+                $arr_params = [];
+
+                foreach($opts['params'] as $key => $value) {
+                    if(is_array($value)) {
+                        if(count($value) > 0) {
+                            if(array_keys($value) !== range(0, count($value) - 1)) {
+                                // associative
+                                $multidimensional_array[$key] = $value;
+                            } else {
+                                if(is_array($value[0])) {
+                                    $multidimensional_array[$key] = $value;
+                                } else {
+                                    $single_array[$key] = $value;
+                                }
+                            }
+                        } else {
+                            $single_array[$key] = $value;
+                        }
+                    } else {
+                        $single_array[$key] = $value;
+                    }
+                }
+
+                array_push($arr_params, preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($single_array)));
+                array_push($arr_params, http_build_query($multidimensional_array));
+
+                curl_setopt($ch, CURLOPT_POSTFIELDS, implode('&', $arr_params));
             }
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $opts['method']);
             curl_setopt($ch, CURLOPT_POST, 1);

@@ -6,8 +6,51 @@
 require 'initialize.php';
 
 // Initialize the client
-$client = new \Payrex\PayrexClient('insert your PayRex Secret API key.');
+// $client = new \Payrex\PayrexClient('insert your PayRex Secret API key.');
+$client = new \Payrex\PayrexClient('sk_test_Z6nS2m3q7NaSRpLxFE34DUNrLniVtPYg');
 
+try {
+    $response = $client->checkoutSessions->create([
+        "currency" => "PHP",
+        "success_url" => "http://google.com",
+        "cancel_url" => "http://google.com",
+        "payment_methods" => [
+            "card",
+            "gcash"
+        ],
+        "line_items" => [
+            [
+                "amount" => "10000",
+                "quantity" => "1",
+                "name" => "Shampoo",
+                "description" => "Very bubbly"
+            ],
+            [
+                "amount" => "100000",
+                "quantity" => "2",
+                "name" => "Comb",
+                "description" => "Fixes your hair"
+            ]
+        ]
+    ]);
+
+    print "<pre>";
+    print_r($response->url);
+    print "</pre>";
+    die();
+} catch(\Payrex\Exceptions\InvalidRequestException $e) {
+    foreach($e->getError() as $error) {
+        echo $error->code;
+        echo "\r\n";
+        echo $error->detail;
+        echo "\r\n";
+        echo "\r\n";
+    }
+}
+
+die();
+
+/*
 // Error handling
 try {
     $client = new \Payrex\PayrexClient('invalid secret api key');
@@ -70,3 +113,4 @@ $webhook = $client->webhooks->create([
     'description' => 'test description',
     'events' => ['payment_intent.succeeded'],
 ]);
+*/
