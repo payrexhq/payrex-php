@@ -14,6 +14,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
     public $last_payment_error;
     public $status;
     public $payment_methods;
+    public $payment_method_options;
     public $next_action;
     public $metadata;
     public $created_at;
@@ -33,6 +34,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
         $this->last_payment_error = array_key_exists("last_payment_error", $data) ? $data['last_payment_error']: null;
         $this->status = $data['status'];
         $this->payment_methods = $data['payment_methods'];
+        $this->payment_method_options = $data['payment_method_options'];
         $this->next_action = $data['next_action'];
         $this->metadata = empty($data['metadata']) ? null : $data['metadata'];
         $this->created_at = $data['created_at'];
