@@ -17,7 +17,6 @@ class CheckoutSession extends \Payrex\Entities\BaseEntity
     public $success_url;
     public $cancel_url;
     public $payment_methods;
-    public $capture_type;
     public $description;
     public $submit_type;
     public $expires_at;
@@ -41,7 +40,6 @@ class CheckoutSession extends \Payrex\Entities\BaseEntity
         $this->success_url = $data['success_url'];
         $this->cancel_url = $data['cancel_url'];
         $this->payment_methods = $data['payment_methods'];
-        $this->capture_type = $data['capture_type'];
         $this->description = $data['description'];
         $this->submit_type = $data['submit_type'];
         $this->expires_at = $data['expires_at'];
