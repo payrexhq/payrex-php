@@ -43,7 +43,7 @@ class HttpClient
         
         if (in_array($opts['method'], ['DELETE', 'POST', 'PUT'])) {
             if (isset($opts['params'])) {
-                curl_setopt($ch, CURLOPT_POSTFIELDS, preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($opts['params'])));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, \Payrex\Helpers\Parameter::encode($opts['params']));
             }
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $opts['method']);
             curl_setopt($ch, CURLOPT_POST, 1);

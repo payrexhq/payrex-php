@@ -5,11 +5,12 @@ namespace Payrex\Services;
 class ServiceFactory
 {
     private $classes = [
-        'merchants'      => \Payrex\Services\MerchantService::class,
-        'paymentIntents' => \Payrex\Services\PaymentIntentService::class,
-        'refunds'        => \Payrex\Services\RefundService::class,
-        'transfers'      => \Payrex\Services\TransferService::class,
-        'webhooks'      => \Payrex\Services\WebhookService::class
+        'merchants'        => \Payrex\Services\MerchantService::class,
+        'checkoutSessions' => \Payrex\Services\CheckoutSessionService::class,
+        'paymentIntents'   => \Payrex\Services\PaymentIntentService::class,
+        'refunds'          => \Payrex\Services\RefundService::class,
+        'transfers'        => \Payrex\Services\TransferService::class,
+        'webhooks'         => \Payrex\Services\WebhookService::class
     ];
 
     public function get($name)

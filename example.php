@@ -50,20 +50,6 @@ $refund = $client->refunds->create([
     // other optional payload.
 ]);
 
-// Create a connect merchant
-$connect_merchant = $client->merchants->create([
-    'connection_type' => 'standard',
-]);
-
-// Create a transfer
-$transfer = $client->transfers->create([
-    'amount' => 5000,
-    'currency' => 'PHP',
-    'source' => 'insert payment id to transfer amount',
-    'destination' => 'insert connect merchant id that will receive the transfer'
-    // other optional payload.
-]);
-
 // Create a webhook
 $webhook = $client->webhooks->create([
     'url' => 'https://google3.com',
