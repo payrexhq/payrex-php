@@ -5,7 +5,7 @@ namespace Payrex\Exceptions;
 class BaseException extends \Exception
 {
     private $data;
-    protected array $errors;
+    protected $errors = [];
     
     public function __construct($data)
     {
