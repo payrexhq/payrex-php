@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.5] - 2024-07-30
+
+- Add amount_capturable and amount_received for hold then capture partial amount support.
+
 ## [0.1.4] - 2024-07-26
 
 - Remove typed declaration in BaseException class to support merchants with PHP version below 7.4. Typed declaration was released in 7.4.

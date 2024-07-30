@@ -6,6 +6,8 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
 {
     public $id;
     public $amount;
+    public $amount_received;
+    public $amount_capturable;
     public $client_secret;
     public $currency;
     public $description;
@@ -26,6 +28,8 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
 
         $this->id = $data['id'];
         $this->amount = $data['amount'];
+        $this->amount_received = $data['amount_received'];
+        $this->amount_capturable = $data['amount_capturable'];
         $this->client_secret = $data['client_secret'];
         $this->currency = $data['currency'];
         $this->description = $data['description'];
