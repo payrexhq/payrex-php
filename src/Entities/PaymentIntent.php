@@ -34,13 +34,13 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
         $this->currency = $data['currency'];
         $this->description = $data['description'];
         $this->livemode = $data['livemode'];
-        $this->latest_payment = array_key_exists("latest_payment", $data) ? $data['latest_payment'] : null;
-        $this->last_payment_error = array_key_exists("last_payment_error", $data) ? $data['last_payment_error'] : null;
+        $this->latest_payment = $data['latest_payment'];
+        $this->last_payment_error = $data['last_payment_error'];
         $this->status = $data['status'];
         $this->payment_methods = $data['payment_methods'];
         $this->payment_method_options = $data['payment_method_options'];
         $this->next_action = $data['next_action'];
-        $this->metadata = empty($data['metadata']) ? null : $data['metadata'];
+        $this->metadata = $data['metadata'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
     }

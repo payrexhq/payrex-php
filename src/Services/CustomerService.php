@@ -2,8 +2,8 @@
 
 namespace Payrex\Services;
 
-class CheckoutSessionService extends \Payrex\Services\BaseService {
-    const URI = '/checkout_sessions';
+class CustomerService extends \Payrex\Services\BaseService {
+    const URI = '/customers';
 
     public function create($params) {
       $response = $this->httpClient->request([
@@ -12,7 +12,7 @@ class CheckoutSessionService extends \Payrex\Services\BaseService {
           'params' => $params
       ]);
 
-      return new \Payrex\Entities\CheckoutSession($response);
+      return new \Payrex\Entities\Customer($response);
     }
 
     public function retrieve($id) {
@@ -21,7 +21,7 @@ class CheckoutSessionService extends \Payrex\Services\BaseService {
           'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}",
       ]);
 
-      return new \Payrex\Entities\CheckoutSession($response);
+      return new \Payrex\Entities\Customer($response);
     }
     
     public function list($params = []) {
@@ -32,7 +32,7 @@ class CheckoutSessionService extends \Payrex\Services\BaseService {
       ]);
 
       foreach ($response->data['data'] as $key => $value) {
-          $response->data['data'][$key] = new \Payrex\Entities\CheckoutSession(
+          $response->data['data'][$key] = new \Payrex\Entities\Customer(
             new \Payrex\ApiResource($value)
           );
       }
@@ -40,12 +40,22 @@ class CheckoutSessionService extends \Payrex\Services\BaseService {
       return new \Payrex\Entities\Listing($response);
     }
 
-    public function expire($id) {
+    public function update($id, $params) {
       $response = $this->httpClient->request([
-          'method' => 'POST',
-          'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}/expire",
+          'method' => 'PUT',
+          'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}",
+          'params' => $params
       ]);
 
-      return new \Payrex\Entities\CheckoutSession($response);
+      return new \Payrex\Entities\Customer($response);
+    }
+
+    public function delete($id) {
+      $response = $this->httpClient->request([
+          'method' => 'DELETE',
+          'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}",
+      ]);
+
+      return new \Payrex\Entities\Deleted($response);
     }
 }

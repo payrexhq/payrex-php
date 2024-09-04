@@ -33,7 +33,9 @@ class WebhookService extends \Payrex\Services\BaseService {
         ]);
 
         foreach ($apiResponse->data['data'] as $key => $value) {
-            $apiResponse->data['data'][$key] = new \Payrex\Entities\Webhook($value);
+            $apiResponse->data['data'][$key] = new \Payrex\Entities\Webhook(
+                new \Payrex\ApiResource($value)
+            );
         }
 
         return new \Payrex\Entities\Listing($apiResponse);

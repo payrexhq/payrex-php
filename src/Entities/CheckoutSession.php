@@ -35,7 +35,7 @@ class CheckoutSession extends \Payrex\Entities\BaseEntity
         $this->line_items = $data['line_items'];
         $this->livemode = $data['livemode'];
         $this->url = $data['url'];
-        $this->payment_intent = new \Payrex\Entities\PaymentIntent(new \Payrex\ApiResource($data['payment_intent']));
+        $this->payment_intent = $data['payment_intent'];
         $this->metadata = $data['metadata'];
         $this->success_url = $data['success_url'];
         $this->cancel_url = $data['cancel_url'];
