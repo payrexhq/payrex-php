@@ -75,6 +75,16 @@ class BillingStatementService extends \Payrex\Services\BaseService
         return new \Payrex\Entities\BillingStatement($response);
     }
 
+    public function send($id)
+    {
+        $this->httpClient->request([
+            'method' => 'POST',
+            'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}/send",
+        ]);
+
+        return null;
+    }
+
     public function void($id)
     {
         $response = $this->httpClient->request([
