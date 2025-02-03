@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2] - 2025-02-03
+
+- billing_details_collection support for PayRex Checkout.
+
 ## [1.0.1] - 2024-10-02
 
 - Add send billing statement via email endpoint.

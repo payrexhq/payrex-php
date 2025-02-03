@@ -5,6 +5,7 @@ namespace Payrex\Entities;
 class CheckoutSession extends \Payrex\Entities\BaseEntity
 {
     public $id;
+    public $billing_details_collection;
     public $customer_reference_id;
     public $client_secret;
     public $status;
@@ -28,6 +29,7 @@ class CheckoutSession extends \Payrex\Entities\BaseEntity
         $data = $apiResource->data;
 
         $this->id = $data['id'];
+        $this->billing_details_collection = $data['billing_details_collection'];
         $this->customer_reference_id = $data['customer_reference_id'];
         $this->client_secret = $data['client_secret'];
         $this->status = $data['status'];
