@@ -14,6 +14,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
     public $livemode;
     public $latest_payment;
     public $last_payment_error;
+    public $statement_descriptor;
     public $status;
     public $payment_methods;
     public $payment_method_options;
@@ -36,6 +37,7 @@ class PaymentIntent extends \Payrex\Entities\BaseEntity
         $this->livemode = $data['livemode'];
         $this->latest_payment = $data['latest_payment'];
         $this->last_payment_error = $data['last_payment_error'];
+        $this->statement_descriptor = $data['statement_descriptor'];
         $this->status = $data['status'];
         $this->payment_methods = $data['payment_methods'];
         $this->payment_method_options = $data['payment_method_options'];
