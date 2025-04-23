@@ -7,7 +7,6 @@ class CustomerSession extends \Payrex\Entities\BaseEntity
     public $id;
     public $customer_id;
     public $client_secret;
-    public $merchant_id;
     public $livemode;
     public $components;
     public $expired;
@@ -22,7 +21,6 @@ class CustomerSession extends \Payrex\Entities\BaseEntity
         $this->id = $data['id'];
         $this->customer_id = $data['customer_id'];
         $this->client_secret = $data['client_secret'];
-        $this->merchant_id = $data['merchant_id'];
         $this->livemode = $data['livemode'];
         $this->components = $data['components'];
         $this->expired = $data['expired'];
