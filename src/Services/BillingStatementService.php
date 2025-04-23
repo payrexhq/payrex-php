@@ -27,7 +27,7 @@ class BillingStatementService extends \Payrex\Services\BaseService
         return new \Payrex\Entities\BillingStatement($response);
     }
 
-    public function retrieveList($params = [])
+    public function list($params = [])
     {
         $response = $this->httpClient->request([
             'method' => 'GET',
