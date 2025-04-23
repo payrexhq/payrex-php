@@ -25,7 +25,7 @@ class WebhookService extends \Payrex\Services\BaseService {
         return new \Payrex\Entities\Webhook($response);
     }
 
-    public function list($params = []) {
+    public function retrieveList($params = []) {
         $apiResponse = $this->httpClient->request([
             'method' => 'GET',
             'url'    => "{$this->client->apiBaseUrl}" . self::URI,

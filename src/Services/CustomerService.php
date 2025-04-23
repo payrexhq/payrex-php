@@ -24,7 +24,7 @@ class CustomerService extends \Payrex\Services\BaseService {
       return new \Payrex\Entities\Customer($response);
     }
     
-    public function list($params = []) {
+    public function retrieveList($params = []) {
       $response = $this->httpClient->request([
           'method' => 'GET',
           'url'    => "{$this->client->apiBaseUrl}" . self::URI,

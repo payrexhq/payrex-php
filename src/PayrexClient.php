@@ -12,7 +12,7 @@ class PayrexClient
     /** @var string Payrex API key used for authenticating and calling Payrex API operations. */
     public $apiKey;
     /** @var string Payrex API Base Url */
-    public $apiBaseUrl = 'https://api.payrexhq.com';
+    public $apiBaseUrl = 'http://api.localhost';
     public $config;
     private $serviceFactory;
 
