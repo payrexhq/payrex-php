@@ -11,6 +11,8 @@ class CustomerSession extends \Payrex\Entities\BaseEntity
     public $livemode;
     public $payment_intent_id;
     public $components;
+    public $expired;
+    public $expired_at;
     public $created_at;
     public $updated_at;
 
@@ -25,6 +27,8 @@ class CustomerSession extends \Payrex\Entities\BaseEntity
         $this->livemode = $data['livemode'];
         $this->payment_intent_id = $data['payment_intent_id'];
         $this->components = $data['components'];
+        $this->expired = $data['expired'];
+        $this->expired_at = $data['expired_at'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
     }
