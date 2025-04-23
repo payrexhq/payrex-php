@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.1] - 2025-04-23
+
+- Add update support for refunds.
+
 ## [1.2.0] - 2025-02-07
 
 - Add billing_details_collection support for billing statements.
