@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0] - 2025-04-23
+
+- Add customer session endpoints.
+
 ## [1.2.1] - 2025-04-23
 
 - Add update support for refunds.

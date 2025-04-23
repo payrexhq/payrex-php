@@ -8,6 +8,7 @@ class ServiceFactory
         'billingStatements'         => \Payrex\Services\BillingStatementService::class,
         'billingStatementLineItems' => \Payrex\Services\BillingStatementLineItemService::class,
         'checkoutSessions'          => \Payrex\Services\CheckoutSessionService::class,
+        'customerSessions'          => \Payrex\Services\CustomerSessionService::class,
         'customers'                 => \Payrex\Services\CustomerService::class,
         'paymentIntents'            => \Payrex\Services\PaymentIntentService::class,
         'refunds'                   => \Payrex\Services\RefundService::class,
