@@ -10,6 +10,7 @@ class ServiceFactory
         'checkoutSessions'          => \Payrex\Services\CheckoutSessionService::class,
         'customerSessions'          => \Payrex\Services\CustomerSessionService::class,
         'customers'                 => \Payrex\Services\CustomerService::class,
+        'payments'                  => \Payrex\Services\PaymentService::class,
         'paymentIntents'            => \Payrex\Services\PaymentIntentService::class,
         'refunds'                   => \Payrex\Services\RefundService::class,
         'webhooks'                  => \Payrex\Services\WebhookService::class

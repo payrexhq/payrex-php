@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.0] - 2025-05-15
+
+- Add get payment by id endpoint.
+
 ## [1.3.0] - 2025-04-23
 
 - Add customer session endpoints.
