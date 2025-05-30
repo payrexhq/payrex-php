@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.6.0] - 2025-05-30
+- Add update payment endpoint.
+
 ## [1.5.2] - 2025-05-30
 - Change .list_transactions method to .listTransactions
 
