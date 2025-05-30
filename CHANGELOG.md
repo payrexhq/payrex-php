@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.5.2] - 2025-05-30
+- Change .list_transactions method to .listTransactions
+
 ## [1.5.1] - 2025-05-30
 - Code improvement handling http request.
 
