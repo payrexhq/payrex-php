@@ -6,10 +6,63 @@
 require 'initialize.php';
 
 // Initialize the client
-$client = new \Payrex\PayrexClient('insert your PayRex Secret API key.');
+$client = new \Payrex\PayrexClient('sk_live_xwMfXzuxAFBa8t6thSjAp9ed9HUpUHez');
+
+$customer = $client->customers->create([
+    'currency' => 'PHP',
+    'name' => 'test',
+    'email' => 'test@gmail.com'
+]);
+
+$billingStatement = $client->billingStatements->create([
+'currency' => 'PHP',
+'payment_settings' => [
+    'payment_methods' => ['card', 'gcash']
+],
+'customer_id' => $customer->id,
+]);
+
+$billingStatement = $client->billingStatements->delete($billingStatement->id);
+
+print "<pre>";
+print_r($billingStatement);
+print "</pre>";
+die();
+
+/* try {
+    $payoutTransactions = $client->payouts->list_transactions(
+        'po_XG8frmLJqtiYz4jrP39UXwSZYDyNpzjs',
+        [
+            'limit' => 2,
+            'after' => 'po_txn_e935EF1mm7vcYaCbV2CcbxxjSYBfUkun'
+        ]
+    );
+
+    if($payoutTransactions->has_more) {
+        foreach($payoutTransactions->data as $row) {
+            // push to SAP
+            if($row->transaction_type == 'payment') {
+                $grossAmount = $row->;
+                $paymentId = $row->transaction_id;
+            }
+        }
+    }
+
+
+    print "<pre>";
+    print_r($payoutTransactions);
+    print "</pre>";
+    die();
+} catch (\Payrex\Exceptions\InvalidRequestException $e) {
+    // handle error if there's validation error
+    foreach($e->getError() as $error) {
+        echo $error->code;
+        echo $error->detail;
+    }
+} */
 
 // Error handling
-try {
+/* try {
     $client = new \Payrex\PayrexClient('invalid secret api key');
     // Some payrex API calls
 } catch (\Payrex\Exceptions\AuthenticationException $e) {
@@ -55,4 +108,4 @@ $webhook = $client->webhooks->create([
     'url' => 'https://google3.com',
     'description' => 'test description',
     'events' => ['payment_intent.succeeded'],
-]);
+]); */

@@ -16,7 +16,7 @@ class HttpClient
     {        
         $url = $opts['url'];
 
-        if (isset($opts['params']) && $opts['method'] === 'GET') {
+        if (isset($opts['params']) && in_array($opts['method'], ['GET', 'DELETE'])) {
             $url .= '?' . preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($opts['params']));
         }
 
@@ -41,7 +41,7 @@ class HttpClient
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         
-        if (in_array($opts['method'], ['DELETE', 'POST', 'PUT'])) {
+        if (in_array($opts['method'], ['POST', 'PUT'])) {
             if (isset($opts['params'])) {
                 curl_setopt($ch, CURLOPT_POSTFIELDS, preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($opts['params'])));
             }

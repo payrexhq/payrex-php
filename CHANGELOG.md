@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.5.1] - 2025-05-30
+- Code improvement handling http request.
+
 ## [1.5.0] - 2025-05-30
 
 - Add list payout transactions endpoint.
