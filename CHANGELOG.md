@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.5.0] - 2025-05-30
+
+- Add list payout transactions endpoint.
+- Add Payout and PayoutTransaction resources.
+
 ## [1.4.0] - 2025-05-15
 
 - Add get payment by id endpoint.
