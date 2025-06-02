@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6.1] - 2025-06-02
+
+- Return net_amount in Payout Transaction resource.
+
 ## [1.6.0] - 2025-05-30
 - Add update payment endpoint.
 

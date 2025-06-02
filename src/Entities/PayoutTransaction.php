@@ -7,6 +7,7 @@ class PayoutTransaction extends \Payrex\Entities\BaseEntity
     public $id;
     public $amount;
     public $payout_id;
+    public $net_amount;
     public $transaction_type;
     public $transaction_id;
     public $created_at;
@@ -18,6 +19,7 @@ class PayoutTransaction extends \Payrex\Entities\BaseEntity
 
         $this->id = $data['id'];
         $this->amount = $data['amount'];
+        $this->net_amount = $data['net_amount'];
         $this->payout_id = $data['payout_id'];
         $this->transaction_type = $data['transaction_type'];
         $this->transaction_id = $data['transaction_id'];
