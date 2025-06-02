@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.6.2] - 2025-06-02
+
+- Remove unused attribute
+
 ## [1.6.1] - 2025-06-02
 
 - Return net_amount in Payout Transaction resource.
