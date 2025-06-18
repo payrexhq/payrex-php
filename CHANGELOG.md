@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.7.0] - 2025-06-18
+- Add update payment intent endpoint.
+- Support refund when parsing event data.
+
 ## [1.6.2] - 2025-06-02
 
 - Remove unused attribute
