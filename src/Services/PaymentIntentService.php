@@ -37,4 +37,15 @@ class PaymentIntentService extends \Payrex\Services\BaseService {
 
         return new \Payrex\Entities\PaymentIntent($apiResponse);
     }
+
+    public function update($id, $params)
+    {
+        $apiResponse = $this->httpClient->request([
+            'method' => 'PUT',
+            'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}",
+            'params' => $params
+        ]);
+
+        return new \Payrex\Entities\PaymentIntent($apiResponse);
+    }
 }
