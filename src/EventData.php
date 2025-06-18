@@ -9,7 +9,8 @@ class EventData
   public $resource;
 
   const DATA_TYPES = [
-    "payment_intent" => '\\Payrex\\Entities\\PaymentIntent'
+    "payment_intent" => '\\Payrex\\Entities\\PaymentIntent',
+    "refund" => '\\Payrex\\Entities\\Refund'
   ];
 
   public function __construct($data) {
