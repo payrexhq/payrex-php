@@ -12,6 +12,7 @@ class BillingStatement extends \Payrex\Entities\BaseEntity
     public $due_at;
     public $finalized_at;
     public $billing_details_collection;
+    public $billing_statement_merchant_name;
     public $billing_statement_number;
     public $billing_statement_url;
     public $line_items;
@@ -37,6 +38,7 @@ class BillingStatement extends \Payrex\Entities\BaseEntity
         $this->due_at = $data['due_at'];
         $this->finalized_at = $data['finalized_at'];
         $this->billing_details_collection = $data['billing_details_collection'];
+        $this->billing_statement_merchant_name = $data['billing_statement_merchant_name'];
         $this->billing_statement_number = $data['billing_statement_number'];
         $this->billing_statement_url = $data['billing_statement_url'];
         $this->line_items = $data['line_items'];
