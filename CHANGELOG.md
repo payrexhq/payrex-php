@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.0] - 2025-06-24
+- Return billing_statement_merchant_name in Billing Statement resource.
+
 ## [1.7.0] - 2025-06-18
 - Add update payment intent endpoint.
 - Support refund when parsing event data.
