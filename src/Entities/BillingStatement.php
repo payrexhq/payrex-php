@@ -19,6 +19,7 @@ class BillingStatement extends \Payrex\Entities\BaseEntity
     public $livemode;
     public $metadata;
     public $payment_intent;
+    public $setup_future_usage;
     public $statement_descriptor;
     public $status;
     public $payment_settings;
@@ -45,6 +46,7 @@ class BillingStatement extends \Payrex\Entities\BaseEntity
         $this->livemode = $data['livemode'];
         $this->metadata = $data['metadata'];
         $this->payment_intent = $data['payment_intent'];
+        $this->setup_future_usage = $data['setup_future_usage'];
         $this->statement_descriptor = $data['statement_descriptor'];
         $this->status = $data['status'];
         $this->payment_settings = $data['payment_settings'];
