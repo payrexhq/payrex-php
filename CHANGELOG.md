@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.1] - 2025-07-11
+- Support setup_future_usage on Billing Statement.
+
 ## [1.8.0] - 2025-06-24
 - Return billing_statement_merchant_name in Billing Statement resource.
 
