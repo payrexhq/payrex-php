@@ -15,6 +15,16 @@ class PaymentIntentService extends \Payrex\Services\BaseService {
         return new \Payrex\Entities\PaymentIntent($response);
     }
 
+    public function cancel($id)
+    {
+        $apiResponse = $this->httpClient->request([
+            'method' => 'POST',
+            'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}/cancel"
+        ]);
+
+        return new \Payrex\Entities\PaymentIntent($apiResponse);
+    }
+
     public function capture($params) {
         $id = $params['id'];
 
