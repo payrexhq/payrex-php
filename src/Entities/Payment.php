@@ -19,6 +19,7 @@ class Payment extends \Payrex\Entities\BaseEntity
     public $customer;
     public $payment_method;
     public $refunded;
+    public $page_session;
     public $created_at;
     public $updated_at;
 
@@ -41,6 +42,7 @@ class Payment extends \Payrex\Entities\BaseEntity
         $this->customer = $data['customer'];
         $this->payment_method = $data['payment_method'];
         $this->refunded = $data['refunded'];
+        $this->page_session = $data['page_session'];
         $this->created_at = $data['created_at'];
         $this->updated_at = $data['updated_at'];
     }
