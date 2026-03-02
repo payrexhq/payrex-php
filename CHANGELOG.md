@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.3] - 2026-03-02
+- Return page_session on Payment resource.
+
 ## [1.8.2] - 2025-07-22
 - Support cancel payment intent.
 
