@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.4] - 2026-05-05
+- Support setup intent endpoints.
+
 ## [1.8.3] - 2026-03-02
 - Return page_session on Payment resource.
 
