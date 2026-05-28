@@ -37,6 +37,7 @@ require $srcDir . '/Entities/BillingStatementLineItem.php';
 require $srcDir . '/Entities/CheckoutSession.php';
 require $srcDir . '/Entities/CustomerSession.php';
 require $srcDir . '/Entities/Customer.php';
+require $srcDir . '/Entities/PaymentMethod.php';
 require $srcDir . '/Entities/PaymentIntent.php';
 require $srcDir . '/Entities/SetupIntent.php';
 require $srcDir . '/Entities/Payout.php';

@@ -40,6 +40,31 @@ class CustomerService extends \Payrex\Services\BaseService {
       return new \Payrex\Entities\Listing($response);
     }
 
+    public function listPaymentMethods($id, $params = []) {
+      $response = $this->httpClient->request([
+          'method' => 'GET',
+          'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}/payment_methods",
+          'params' => $params
+      ]);
+
+      foreach ($response->data['data'] as $key => $value) {
+          $response->data['data'][$key] = new \Payrex\Entities\PaymentMethod(
+            new \Payrex\ApiResource($value)
+          );
+      }
+
+      return new \Payrex\Entities\Listing($response);
+    }
+
+    public function deletePaymentMethod($id, $params = []) {
+      $response = $this->httpClient->request([
+          'method' => 'DELETE',
+          'url'    => "{$this->client->apiBaseUrl}" . self::URI . "/{$id}/payment_methods/{$params['payment_method_id']}",
+      ]);
+
+      return new \Payrex\Entities\Deleted($response);
+    }
+
     public function update($id, $params) {
       $response = $this->httpClient->request([
           'method' => 'PUT',

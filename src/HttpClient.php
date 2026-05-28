@@ -49,6 +49,10 @@ class HttpClient
             curl_setopt($ch, CURLOPT_POST, 1);
         }
 
+        if($opts['method'] === 'DELETE') {
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $opts['method']);
+        }
+
         $body = curl_exec($ch);
         $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $url = curl_getinfo($ch,  CURLINFO_EFFECTIVE_URL);
